@@ -6,16 +6,17 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 16:51:02 by gabriela          #+#    #+#             */
-/*   Updated: 2024/01/21 08:29:52 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/01/22 19:09:45 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SERIALIZER_HPP
 #define SERIALIZER_HPP
 
-#include <cstdint> // for uintptr_t
+#include <string>
+#include <stdint.h>
 #include <iostream>
-#include <cstdlib> // for std::atoi
+#include <cstdlib>
 
 struct Data
 {
