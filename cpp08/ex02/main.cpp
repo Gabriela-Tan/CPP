@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 10:24:56 by gabriela          #+#    #+#             */
-/*   Updated: 2024/02/05 07:59:48 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/02/05 13:24:38 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,7 @@ int	main(void)
 
 	while (!mstack.empty())
 		mstack.pop();
-	if (mstack.begin() == mstack.end())
-		std::cout << "The integer stack is empty now." << std::endl;
+	std::cout << "The integer stack is empty now." << std::endl;
 
 	std::cout << "\nReplacing MutantStack with std::list: " << std::endl;
 	std::cout << "Testing list with integers: " << std::endl;
@@ -71,9 +70,7 @@ int	main(void)
 
 	while (!normalList.empty())
 		normalList.pop_back();
-
-	if (normalList.begin() == normalList.end())
-		std::cout << "The integer list is empty now." << std::endl;
+	std::cout << "The integer list is empty now." << std::endl;
 
  	// Test with std::string
 	std::cout << "\nTesting mutant stack with strings: " << std::endl;
