@@ -65,7 +65,7 @@ Span::shortestSpan() const
 	std::sort(sortedNumbers.begin(), sortedNumbers.end());
 
 	int minSpan = std::numeric_limits<int>::max();
-	for (int i = 1; i < sortedNumbers.size(); ++i)
+	for (size_t i = 1; i < sortedNumbers.size(); ++i)
 	{
 		int currentSpan = sortedNumbers[i] - sortedNumbers[i-1];
 		if (currentSpan < minSpan)
