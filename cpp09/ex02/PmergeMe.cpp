@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 19:03:12 by gabriela          #+#    #+#             */
-/*   Updated: 2024/02/21 16:14:28 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/02/23 16:27:24 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,7 @@ PmergeMe::mergeInsertSort(std::vector<int>& vec)
 std::vector<int>
 PmergeMe::mergeSorted(std::vector<int> left, std::vector<int> right)
 {
-	std::vector<int> result;
-
+	std::vector<int> output;
 	std::vector<int>::iterator leftIt = left.begin();
 	std::vector<int>::iterator rightIt = right.begin();
 
@@ -77,25 +76,26 @@ PmergeMe::mergeSorted(std::vector<int> left, std::vector<int> right)
 	{
 		if (*leftIt <= *rightIt)
 		{
-			result.push_back(*leftIt);
+			output.push_back(*leftIt);
 			++leftIt;
 		}
-		else {
-			result.push_back(*rightIt);
+		else
+		{
+			output.push_back(*rightIt);
 			++rightIt;
 		}
 	}
 	while (leftIt != left.end())
 	{
-		result.push_back(*leftIt);
+		output.push_back(*leftIt);
 		++leftIt;
 	}
 	while (rightIt != right.end())
 	{
-		result.push_back(*rightIt);
+		output.push_back(*rightIt);
 		++rightIt;
 	}
-	return result;
+	return output;
 }
 
 void
@@ -136,8 +136,7 @@ PmergeMe::mergeInsertSort(std::deque<int>& deq)
 std::deque<int>
 PmergeMe::mergeSorted(std::deque<int> left, std::deque<int> right)
 {
-	std::deque<int> result;
-
+	std::deque<int> output;
 	std::deque<int>::iterator leftIt = left.begin();
 	std::deque<int>::iterator rightIt = right.begin();
 
@@ -145,39 +144,41 @@ PmergeMe::mergeSorted(std::deque<int> left, std::deque<int> right)
 	{
 		if (*leftIt <= *rightIt)
 		{
-			result.push_back(*leftIt);
+			output.push_back(*leftIt);
 			++leftIt;
 		}
-		else {
-			result.push_back(*rightIt);
+		else
+		{
+			output.push_back(*rightIt);
 			++rightIt;
 		}
 	}
 	while (leftIt != left.end())
 	{
-		result.push_back(*leftIt);
+		output.push_back(*leftIt);
 		++leftIt;
 	}
 	while (rightIt != right.end())
 	{
-		result.push_back(*rightIt);
+		output.push_back(*rightIt);
 		++rightIt;
 	}
-	return result;
+	return output;
 }
 
 void
-PmergeMe::printOutput(const std::vector<int>& output)
+PmergeMe::printOutput(const std::vector<int>& input)
 {
-	if (output.size() <= 1) return;
+	if (input.size() <= 1)
+		return;
 
-	std::vector<int> vecContainer(output);
-	std::deque<int> dequeContainer(output.begin(), output.end());
+	std::vector<int> vecContainer(input);
+	std::deque<int> deqContainer(input.begin(), input.end());
 
 	std::cout << "Before: ";
-	for (std::vector<int>::const_iterator it = output.begin(); it != output.end(); ++it)
+	for (std::vector<int>::const_iterator it = input.begin(); it != input.end(); ++it)
 	{
-		if (it != output.begin()) 
+		if (it != input.begin()) 
 			std::cout << " ";
 		std::cout << *it;
 	}
@@ -195,34 +196,36 @@ PmergeMe::printOutput(const std::vector<int>& output)
 		std::cout << *it;
 	}
 	std::cout << std::endl;
+
 	std::cout << std::fixed << std::setprecision(5)
 		<< "Time to process a range of " << vecContainer.size()
-		 << " elements with std::vector<int> : " << timeTakenVec << " s\n";
+		 << " elements with std::vector<int> : " << timeTakenVec << " s" << std::endl;
 
 	std::cout << "Before: ";
-	for (std::deque<int>::const_iterator it = dequeContainer.begin(); it != dequeContainer.end(); ++it)
+	for (std::deque<int>::const_iterator it = deqContainer.begin(); it != deqContainer.end(); ++it)
 	{
-		if (it != dequeContainer.begin())
+		if (it != deqContainer.begin())
 			std::cout << " ";
 		std::cout << *it;
 	}
 	std::cout << std::endl;
 
 	std::clock_t startDeq = std::clock();
-	mergeInsertSort(dequeContainer);
+	mergeInsertSort(deqContainer);
 	double timeTakenDeq = static_cast<double>(std::clock() - startDeq) / CLOCKS_PER_SEC;
 
 	std::cout << "After: ";
-	for (std::deque<int>::const_iterator it = dequeContainer.begin(); it != dequeContainer.end(); ++it)
+	for (std::deque<int>::const_iterator it = deqContainer.begin(); it != deqContainer.end(); ++it)
 	{
-		if (it != dequeContainer.begin())
+		if (it != deqContainer.begin())
 			std::cout << " ";
 		std::cout << *it;
 	}
 	std::cout << std::endl;
+
 	std::cout << std::fixed << std::setprecision(5)
-		<< "Time to process a range of " << dequeContainer.size()
-		<< " elements with std::deque<int> : " << timeTakenDeq << " s\n";
+		<< "Time to process a range of " << deqContainer.size()
+		<< " elements with std::deque<int> : " << timeTakenDeq << " s" << std::endl;
 }
 
 bool

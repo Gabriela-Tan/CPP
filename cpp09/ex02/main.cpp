@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 19:03:19 by gabriela          #+#    #+#             */
-/*   Updated: 2024/02/21 14:51:06 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/02/23 15:46:58 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,6 @@ int main(int argc, char* argv[])
 	merge.printOutput(input);
 	return 0;
 }
+
+// linux input: `shuf -i 1-1000 -n 3000 | tr "\n" " " `
+// mac input: `jot -r 3000 1 1000 | tr '\n' ' '`
