@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 19:03:15 by gabriela          #+#    #+#             */
-/*   Updated: 2024/02/23 15:45:55 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/02/24 09:56:50 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ class PmergeMe
 		PmergeMe& operator=(const PmergeMe& other);
 		~PmergeMe();
 
-		std::vector<int> mergeSorted(std::vector<int> left, std::vector<int> right);
-		std::deque<int> mergeSorted(std::deque<int> left, std::deque<int> right);
 		void mergeInsertSort(std::vector<int>& vec);
 		void mergeInsertSort(std::deque<int>& deq);
+		std::vector<int> mergeSorted(std::vector<int> left, std::vector<int> right);
+		std::deque<int> mergeSorted(std::deque<int> left, std::deque<int> right);
 		void printOutput(const std::vector<int>& output);
 };
 
