@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 19:03:12 by gabriela          #+#    #+#             */
-/*   Updated: 2024/02/21 13:40:38 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/02/24 09:44:50 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,18 @@ RPN::parse(const std::string& expression)
 		std::cerr << "Error" << std::endl;
 	else
 		std::cout << _numbers.top() << std::endl;
+}
+
+bool
+isValid(const char* str)
+{
+	if (*str == '\0')
+		return false;
+
+	for (; *str != '\0'; ++str)
+	{
+		if (!(*str >= '0' && *str <= '9') && *str != '+' && *str != '-' && *str != '*' && *str != '/' && *str != ' ')
+			return false;
+	}
+	return true;
 }

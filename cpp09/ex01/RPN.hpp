@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 19:03:15 by gabriela          #+#    #+#             */
-/*   Updated: 2024/02/18 09:34:41 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/02/24 09:42:35 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ class RPN
 
 		void parse(const std::string& expression);
 };
+
+		bool isValid(const char* str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 19:03:19 by gabriela          #+#    #+#             */
-/*   Updated: 2024/02/18 09:35:25 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/02/24 09:41:40 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(int argc, char* argv[])
 {
-	if (argc == 2)
+	if (argc == 2 && isValid(argv[1]))
 	{
 		RPN calculation;
 		calculation.parse(argv[1]);
