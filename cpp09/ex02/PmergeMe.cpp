@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabtan <gabtan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 19:03:12 by gabriela          #+#    #+#             */
-/*   Updated: 2024/02/23 16:27:24 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/02/24 14:29:16 by gabtan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,7 +197,7 @@ PmergeMe::printOutput(const std::vector<int>& input)
 	}
 	std::cout << std::endl;
 
-	std::cout << std::fixed << std::setprecision(5)
+	std::cout << std::fixed << std::setprecision(10)
 		<< "Time to process a range of " << vecContainer.size()
 		 << " elements with std::vector<int> : " << timeTakenVec << " s" << std::endl;
 
@@ -223,7 +223,7 @@ PmergeMe::printOutput(const std::vector<int>& input)
 	}
 	std::cout << std::endl;
 
-	std::cout << std::fixed << std::setprecision(5)
+	std::cout << std::fixed << std::setprecision(10)
 		<< "Time to process a range of " << deqContainer.size()
 		<< " elements with std::deque<int> : " << timeTakenDeq << " s" << std::endl;
 }

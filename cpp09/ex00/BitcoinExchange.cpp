@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabtan <gabtan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 19:03:12 by gabriela          #+#    #+#             */
-/*   Updated: 2024/02/17 16:52:31 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/02/24 15:04:46 by gabtan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,10 +103,7 @@ BitcoinExchange::processInput(const std::string fileName)
 		throw std::runtime_error("Cannot open the input file: " + fileName);
 	if (!std::getline(input, row) || row != "date | value")
 		throw std::runtime_error("The input file is invalid.");
-	if (!std::getline(input, row))
-		throw std::runtime_error("The input file only contains the header.");
-
-	std::getline(input, row);
+		
 	while (std::getline(input, row)) 
 	{
 		try
