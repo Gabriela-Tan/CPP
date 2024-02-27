@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 19:03:12 by gabriela          #+#    #+#             */
-/*   Updated: 2024/02/25 11:45:40 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/02/27 08:23:05 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,18 +80,18 @@ PmergeMe::vecRecursiveSort(size_t base)
 	if (base >= vec_pair.size() - 1)
 		return;
 
-	size_t i = base + 1;
-	while (i < vec_pair.size())
+	for (size_t i = base + 1; i < vec_pair.size(); ++i)
 	{
 		if (vec_pair[i].first < vec_pair[base].first)
 		{
-			std::swap(vec_pair[base].first, vec_pair[i].first);
+			std::swap(vec_pair[i], vec_pair[base]);
 			vecCheckPair(base);
+			vecCheckPair(i);
 		}
-		i++;
 	}
 	vecRecursiveSort(base + 1);
 }
+
 
 void
 PmergeMe::vecMergeAndSort()
@@ -154,20 +154,20 @@ PmergeMe::deqCheckPair(int i)
 		std::swap(deq_pair[i].first, deq_pair[i].second);
 }
 
-void PmergeMe::deqRecursiveSort(size_t base)
+void
+PmergeMe::deqRecursiveSort(size_t base)
 {
 	if (base >= deq_pair.size() - 1)
 		return;
 
-	size_t i = base + 1;
-	while (i < deq_pair.size())
+	for (size_t i = base + 1; i < deq_pair.size(); ++i)
 	{
 		if (deq_pair[i].first < deq_pair[base].first)
 		{
-			std::swap(deq_pair[base].first, deq_pair[i].first);
+			std::swap(deq_pair[i], deq_pair[base]);
 			deqCheckPair(base);
+			deqCheckPair(i);
 		}
-		i++;
 	}
 	deqRecursiveSort(base + 1);
 }
